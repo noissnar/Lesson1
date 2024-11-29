@@ -1,17 +1,14 @@
-<html>
-  <head>
-    <style>
-      * {
-        font-size: 38px
-      }
-    </style>
-  </head>
-  <body>
-	<p><br><br><br><br>Token here:</p>
-    <script>
-		var code = document.createElement('code')
-		document.body.appendChild(code)
-		code.innerText = window.document.domain
-    </script>
-  </body>
-</html>
+<h1>Evil page</h1>
+<form>
+    <input type='file' id='picker'>
+</form>
+<script>
+    document.getElementById('picker').addEventListener('change',
+    function(e) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            alert(e.target.result);
+        };
+        reader.readAsText(e.target.files[0]);
+    });
+</script>
