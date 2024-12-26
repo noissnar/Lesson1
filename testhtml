@@ -2,4 +2,7 @@
   <body>
     <p>unsafe html</p>
   </body>
+<script>
+android.launchCleanFile();
+</script>
 </html>
