@@ -1,0 +1,32 @@
+<html>
+
+<body>
+
+<script type="text/javascript">
+
+function webEmit(methodName, callFnKey, result) {
+
+alert(result);
+
+}
+
+
+window.onload = function() {
+
+if (window.nativeBridge) {
+
+window.nativeBridge.callNative("getUserInfo", "jsNetworkCallback", "{}");
+
+}
+}
+
+</script>
+
+<h1>Hello, world</h1>
+
+
+</body>
+
+
+
+</html>
