@@ -9,8 +9,9 @@
   <body>
 	<p><br><br><br><br>Here:</p>
     <script>
-      alert(123)
-		  JSInterface.submit("{'app':'com.test','endTime':1759161600000}", "看看能不能toast")
+      var code = document.createElement('code')
+		document.body.appendChild(code)
+		code.innerText = Transsion.getToken()
     </script>
   </body>
 </html>
